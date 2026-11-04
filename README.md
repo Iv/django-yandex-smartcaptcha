@@ -8,10 +8,8 @@ No dependencies beyond Django; the token is checked with the standard library.
 ## Install
 
 ```bash
-pip install "django-yandex-smartcaptcha @ https://github.com/Iv/django-yandex-smartcaptcha/archive/refs/tags/v0.1.1.tar.gz"
+pip install django-yandex-smartcaptcha
 ```
-
-The tag archive needs no `git`, so it also works in slim Docker images (`git+https://…@v0.1.1` needs git).
 
 ```python
 INSTALLED_APPS = [

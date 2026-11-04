@@ -6,4 +6,5 @@
     s.defer = true;
     document.head.appendChild(s);
 })();</script>{% endif %}
-<div class="smart-captcha" data-sitekey="{{ client_key }}" data-hl="{{ language }}" style="height: 100px"></div>
+{# min-height, а не height: вариант со слайдером выше 100 px и иначе наезжает на кнопку под ним #}
+<div class="smart-captcha" data-sitekey="{{ client_key }}" data-hl="{{ language }}" style="min-height: 100px; margin-bottom: 1rem"></div>

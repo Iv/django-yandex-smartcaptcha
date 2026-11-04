@@ -75,6 +75,8 @@ def test_widget_renders_container_and_loader():
     assert 'data-sitekey="ysc1_client"' in html
     assert 'data-hl="ru"' in html
     assert "captcha.js" in html
+    # fixed height let the taller slider widget overlap the submit button
+    assert "min-height: 100px" in html
 
 
 def test_widget_without_script():

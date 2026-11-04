@@ -47,7 +47,8 @@ if form.is_valid():
     ...
 ```
 
-The widget renders an empty container; `captcha.js` puts the "I'm not a robot" button there and
+The widget renders an empty container (`min-height: 100px`, so the page does not jump while the
+widget loads, yet a taller widget does not overlap what follows); `captcha.js` puts the "I'm not a robot" button there and
 adds a hidden `smart-token` input, so the token is sent with the form, including
 `$(form).serialize()` in AJAX forms. A token is single-use: after an AJAX submit call
 `window.smartCaptcha.reset()`.

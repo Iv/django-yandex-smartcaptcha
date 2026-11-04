@@ -106,3 +106,13 @@ The Russian translation is compiled into `locale/ru/LC_MESSAGES/django.mo`; afte
 ## License
 
 MIT
+
+## Release
+
+Bump `__version__` in `yandex_smartcaptcha/__init__.py`, commit, then tag and push:
+
+```bash
+git tag -a v0.1.2 -m "0.1.2" && git push origin main v0.1.2
+```
+
+The CI workflow runs the tests and, for a `v*` tag, publishes to PyPI through Trusted Publishing.

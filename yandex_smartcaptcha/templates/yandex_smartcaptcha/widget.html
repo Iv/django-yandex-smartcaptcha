@@ -1,0 +1,9 @@
+{% if load_script %}<script>(function () {
+    if (window.__smartCaptchaScript) return;
+    window.__smartCaptchaScript = true;
+    var s = document.createElement('script');
+    s.src = '{{ script_url }}';
+    s.defer = true;
+    document.head.appendChild(s);
+})();</script>{% endif %}
+<div class="smart-captcha" data-sitekey="{{ client_key }}" data-hl="{{ language }}" style="height: 100px"></div>

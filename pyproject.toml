@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-yandex-smartcaptcha"
+dynamic = ["version"]
+description = "Yandex SmartCaptcha form field for Django"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Ivan Kravchenko" }]
+requires-python = ">=3.10"
+dependencies = ["Django>=4.2"]
+keywords = ["django", "captcha", "smartcaptcha", "yandex", "yandex cloud", "spam"]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-django>=4.8"]
+
+[tool.setuptools.dynamic]
+version = { attr = "yandex_smartcaptcha.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["yandex_smartcaptcha*"]
+
+[tool.setuptools.package-data]
+yandex_smartcaptcha = ["templates/yandex_smartcaptcha/*.html", "locale/*/LC_MESSAGES/*"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+pythonpath = ["."]
